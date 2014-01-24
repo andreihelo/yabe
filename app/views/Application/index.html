@@ -1,4 +1,13 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+#{if frontPost}
+<div class="post">
+    <h2 class="post-title">
+        <a href="#">${frontPost?.title}</a>
+    </h2>
+    <div class="post-metadata">
+        <span class="post-author">Hecho por: ${frontPost?.author?.fullName}</span>
+    </div>
+</div>
+#{/if}
